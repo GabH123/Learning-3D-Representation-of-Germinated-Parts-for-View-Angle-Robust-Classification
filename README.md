@@ -3,15 +3,15 @@
 Acknowledgement: Code is borrowed from MeshInversion (thus, from ConvMesh) and Textured3DGAN.
 
 Original repo:
-*MeshInversion: [link] (https://github.com/junzhezhang/mesh-inversion)
-*Textured3DGAN: [link] (https://github.com/dariopavllo/textured-3d-gan)
-*ConvMesh: [link] (https://github.com/dariopavllo/convmesh)
+* MeshInversion: [link] (https://github.com/junzhezhang/mesh-inversion)
+* Textured3DGAN: [link] (https://github.com/dariopavllo/textured-3d-gan)
+* ConvMesh: [link] (https://github.com/dariopavllo/convmesh)
 
 This project attempts to perform 3D reconstruction on germinated oil palm seeds.
 
 The README file of individual projects were also saved for more information about running the individual projects in different settings. For now the following shows how to run perform reconstruction on the AAR dataset.
 
-#Dependencies
+## Dependencies
 Required libraries:
 
 - [Kaolin](https://github.com/NVIDIAGameWorks/kaolin) (tested on commit [e7e5131](https://github.com/NVIDIAGameWorks/kaolin/tree/e7e513173bd4159ae45be6b3e156a3ad156a3eb9)).
@@ -42,7 +42,7 @@ cd kaolin
 python setup.py install
 ```
 
-#Dataset and pretrained setup
+# Dataset and pretrained setup
 All are already set up. List is included just in case procedure is repeated, for copying the outputs to the right directory for the next step.
 Textured3DGAN
 Mesh template:
@@ -134,7 +134,7 @@ Dataset
 
 		
 		
-#Training
+## Training
 Segmentation
 Step 1 Image and semantic segmentation
 Change `dataset_path` to the path of the dataset.
@@ -182,7 +182,7 @@ python run_pretraining.py --name unconditional_batch1seed_train --data_dir ./dat
 
 ```
 
-#Testing/Inversion
+## Testing/Inversion
 Step 1 Segment testing dataset
 Change `dataset_path` to the path of the dataset.
 Change `image_path` to `train` to perform segmentation on the training set.
@@ -209,7 +209,7 @@ Step 4 GAN Inversion
 python run_inversion.py --name batch1seed_test_out --checkpoint_dir unconditional_batch1seed_train --data_dir ./datasets/batch1seed_test --dataset batch1seed_test 
 ```
 
-#Evaluation
+## Evaluation
 In mesh inversion:
 Calculate IoU:
 ```
@@ -237,7 +237,7 @@ python run_evaluation.py --name batch1seed_test_out --data_dir ./datasets/batch1
 ```
 FID 10 reports the exact front view (90◦) and exact back view (270◦), which correponds to the occluded surfaces.
 
-#Outputs
+## Outputs
 Inversion results:
 `mesh-inversion/outputs/inversion_results/batch1seed_test_out`
 (Note: Job was somehow automatically killed, resulting on 384 out of 401 of the testing set being reconstructed.)
