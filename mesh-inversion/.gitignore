@@ -1,0 +1,10 @@
+checkpoints_gan/
+checkpoints_recon/
+tensorboard_pretrain/
+tensorboard_inversion/
+datasets/
+outputs/
+lib/utils/vgg19-dcbb9e9d.pth
+__pycache__/
+*.zip
+*.py[cod]
